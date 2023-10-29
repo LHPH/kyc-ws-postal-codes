@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+    <entry key="getMaxVersion">
+        SELECT MAX(VERSION) FROM KYC_POSTAL_CODES_CENTRAL
+    </entry>
+
+    <entry key="getPostalCodeMain">
+        SELECT POSTAL_CODE, ID_CITY, CITY, ID_STATE, STATE FROM KYC_POSTAL_CODES_CENTRAL
+        WHERE VERSION = ? AND POSTAL_CODE=?
+    </entry>
+
+    <entry key="getPostalCodeNeighborhoods">
+        SELECT ID_NEIGHBORHOOD, NEIGHBORHOOD FROM KYC_POSTAL_CODES_NEIGHBORHOOD
+        WHERE RELATED_VERSION=? AND RELATED_POSTAL_CODE=?
+    </entry>
+
+</properties>

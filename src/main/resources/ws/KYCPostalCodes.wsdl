@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:pct="http://kyc-postal-codes.com/PostalCodesTypes"
+                  xmlns:tns="http://kyc-postal-codes.com/PostalCodesTypes"
+                  targetNamespace="http://kyc-postal-codes.com/PostalCodesTypes">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="PostalCodesTypes.xsd" elementFormDefault="qualified" schemaLocation="PostalCodesTypes.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="GetPostalCodeResponse">
+        <wsdl:part element="pct:GetPostalCodeResponse" name="GetPostalCodeResponse" />
+    </wsdl:message>
+
+    <wsdl:message name="GetPostalCodeRequest">
+        <wsdl:part element="pct:GetPostalCodeRequest" name="GetPostalCodeRequest" />
+    </wsdl:message>
+
+    <wsdl:portType name="PostalCodePortType">
+
+        <wsdl:operation name="GetPostalCode">
+            <wsdl:input message="tns:GetPostalCodeRequest" name="GetPostalCodeRequest" />
+            <wsdl:output message="tns:GetPostalCodeResponse" name="GetPostalCodeResponse" />
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="PostalCodesPortTypeSoap11" type="tns:PostalCodePortType">
+
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="GetPostalCode">
+            <soap:operation soapAction="" />
+            <wsdl:input name="GetPostalCodeRequest" >
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetPostalCodeResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="KYCPostalCodes">
+        <wsdl:port binding="tns:PostalCodesSoap11" name="PostalCodesSoap11">
+            <soap:address location=" http://localhost:9007/kyc/soap/PostalCodes/"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

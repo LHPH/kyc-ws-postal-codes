@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        jaxb:extensionBindingPrefixes="xjc" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xs:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+        jaxb:version="2.0">
+
+    <jaxb:globalBindings>
+        <jaxb:serializable />
+        <jaxb:javaType xmlType="xs:integer" name="java.lang.Integer"/>
+        <xjc:javaType xmlType="xs:dateTime" name="java.time.Instant" adapter="io.github.threetenjaxb.core.InstantXmlAdapter" />
+        <!--
+        <jaxb:javaType name="java.util.Date" xmlType="xs:date" hasNsContext="false"
+                       parseMethod="com.kyc.payments.util.DateAdapter.parseDate"
+                       printMethod="com.kyc.payments.util.DateAdapter.printDate" />
+
+        -->
+    </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="CommonTypes.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.kyc.postalcodes.ws.coretypes" />
+        </jaxb:schemaBindings>
+
+        <jaxb:bindings node="//xs:element[@name='ErrorWS']">
+            <jaxb:class name="ErrorData" />
+        </jaxb:bindings>
+
+        <!--
+        <jaxb:bindings node="//xs:element[@name='ErrorWS']//xs:element[@name='code']">
+            <jaxb:property name="numberError"/>
+        </jaxb:bindings>
+
+         <jaxb:bindings node="//xs:simpleType[@name='StatusPaymentCategory']">
+            <jaxb:typesafeEnumClass name="StatusPaymentEnum">
+                <jaxb:typesafeEnumMember value="REJECTED" name="PAYMENT_REJECTED" />
+                <jaxb:typesafeEnumMember value="PAID" name="PAYMENT_PAID" />
+                <jaxb:typesafeEnumMember value="ONGOING" name="PAYMENT_ONGOING" />
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+        -->
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="PostalCodesTypes.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.kyc.postalcodes.ws.types" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <!--
+    <jaxb:bindings schemaLocation="AdapterTypes.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.kyc.postalcodes.ws.adapters" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    -->
+
+</jaxb:bindings>

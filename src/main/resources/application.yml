@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: kyc-ws-postal-codes
+  profiles:
+    active: dev
+
+server:
+  port: 9007
+
+kyc-messages:
+  catalog:
+    messages:
+      "001":
+        code: KYC-POSTAL-CODES-001
+        message: Unexpected Error
+        type: ERROR
+      "002":
+        code: KYC-POSTAL-CODES-002
+        message: The postal code is invalid or does not exists
+        type: WARN
+      "003":
+        code: KYC-POSTAL-CODES-003
+        message: The service is unavailable
+        type: ERROR

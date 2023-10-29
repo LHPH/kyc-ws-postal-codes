@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://kyc-postal-codes.com/PostalCodesTypes"
+           xmlns:cmn="http://kyc-postal-codes.com/CommonTypes"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="CommonTypes.xsd" namespace="http://kyc-postal-codes.com/CommonTypes"/>
+
+    <xs:element name="GetPostalCodeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="postalCode" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetPostalCodeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="data" type="cmn:PostalCodeData" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
