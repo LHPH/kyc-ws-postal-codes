@@ -6,7 +6,7 @@
                   targetNamespace="http://kyc-postal-codes.com/PostalCodesTypes">
     <wsdl:types>
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:import namespace="PostalCodesTypes.xsd" elementFormDefault="qualified" schemaLocation="PostalCodesTypes.xsd"/>
+            <xs:import namespace="http://kyc-postal-codes.com/PostalCodesTypes" schemaLocation="PostalCodesTypes.xsd"/>
         </xs:schema>
     </wsdl:types>
 

@@ -4,6 +4,7 @@ import com.kyc.postalcodes.repositories.mappers.NeighborhoodRowMapper;
 import com.kyc.postalcodes.repositories.mappers.PostalCodeDataRowMapper;
 import com.kyc.postalcodes.ws.coretypes.Neighborhood;
 import com.kyc.postalcodes.ws.coretypes.PostalCodeData;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static com.kyc.postalcodes.constants.AppConstants.CACHE_VERSION;
+import static com.kyc.postalcodes.constants.AppConstants.GET_CURRENT_VERSION;
 import static com.kyc.postalcodes.constants.AppConstants.GET_MAX_VERSION;
 import static com.kyc.postalcodes.constants.AppConstants.GET_POSTAL_CODE_MAIN;
 import static com.kyc.postalcodes.constants.AppConstants.GET_POSTAL_CODE_NEIGHBORHOOD;
@@ -38,8 +40,14 @@ public class GetPostalCodesRepository {
     @Cacheable(value = CACHE_VERSION)
     public Integer getMaxVersion(){
 
-        String sql = queriesProps.getProperty(GET_MAX_VERSION);
-        return jdbcTemplate.queryForObject(sql,Integer.class);
+        String sql = queriesProps.getProperty(GET_CURRENT_VERSION);
+        Integer currentVersion = DataAccessUtils.singleResult(jdbcTemplate.queryForList(sql,Integer.class));
+
+        if(currentVersion==null){
+            sql = queriesProps.getProperty(GET_MAX_VERSION);
+            currentVersion = DataAccessUtils.singleResult(jdbcTemplate.queryForList(sql,Integer.class));
+        }
+        return ObjectUtils.defaultIfNull(currentVersion,0);
     }
 
     public PostalCodeData getPostalCodeMain(String postalCode, Integer version){

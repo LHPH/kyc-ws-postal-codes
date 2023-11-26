@@ -17,7 +17,7 @@ import static com.kyc.postalcodes.constants.AppConstants.NAME_SPACE_POSTAL_CODES
 
 @Configuration
 @EnableWs
-@Profile("dev")
+@Profile("dev2")
 public class WebServiceConfigLocal {
 
     @Value("${service.url}")

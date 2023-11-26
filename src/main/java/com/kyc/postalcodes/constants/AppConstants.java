@@ -6,6 +6,7 @@ public final class AppConstants {
     public static final String GET_MAX_VERSION = "getMaxVersion";
     public static final String GET_POSTAL_CODE_MAIN = "getPostalCodeMain";
     public static final String GET_POSTAL_CODE_NEIGHBORHOOD = "getPostalCodeNeighborhoods";
+    public static final String GET_CURRENT_VERSION = "getCurrentVersion";
 
     public static final String ERROR_CODE_001 = "001";
     public static final String ERROR_CODE_002 = "002";

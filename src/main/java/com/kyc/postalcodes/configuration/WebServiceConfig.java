@@ -12,7 +12,7 @@ import org.springframework.xml.xsd.XsdSchema;
 
 @Configuration
 @EnableWs
-@Profile("prod")
+@Profile("dev")
 public class WebServiceConfig {
 
     @Value("${service.url}")

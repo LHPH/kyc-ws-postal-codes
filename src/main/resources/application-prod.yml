@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: ${kyc.config.database.url}
+    username: ${kyc.config.database.username}
+    password: ${kyc.config.database.pass}
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+
+service:
+  url: http://localhost:9007/kyc/soap/
+
+logging:
+  file:
+    name: /opt/kyc/logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: /opt/kyc/logs/${spring.application.name}/%d{yyyy-MM-dd}.%i.log.gz
+      max-file-size: 50MB
+      max-history: 30
+  level:
+    root: INFO
+    com.kyc: INFO
+    org.springframework: INFO
+    org.springframework.ws: INFO
+    org.springframework.ws.server.MessageTracing.sent: INFO
+    org.springframework.ws.server.MessageTracing.received: INFO
+    org.springframework.jdbc.core.JdbcTemplate: INFO
+    org.springframework.jdbc.core.StatementCreatorUtils: INFO
+
+server:
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: /opt/kyc/kyc-config-files/keystore.p12
+    key-store-password: test
+    key-alias: backbone-key
