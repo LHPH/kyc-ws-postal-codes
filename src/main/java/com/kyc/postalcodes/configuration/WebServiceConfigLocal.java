@@ -16,8 +16,7 @@ import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection;
 import static com.kyc.postalcodes.constants.AppConstants.NAME_SPACE_POSTAL_CODES_URI;
 
 @Configuration
-@EnableWs
-@Profile("dev2")
+@Profile("dev")
 public class WebServiceConfigLocal {
 
     @Value("${service.url}")

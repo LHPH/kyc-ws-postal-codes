@@ -1,14 +1,14 @@
 spring:
   datasource:
-    url: ${kyc.config.database.url}
-    username: ${kyc.config.database.username}
-    password: ${kyc.config.database.pass}
+    url: ${kyc.config.database.postgresql.url}
+    username: ${kyc.config.database.postgresql.username}
+    password: ${kyc.config.database.postgresql.secret}
     driverClassName: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
 
 service:
-  url: http://localhost:9007/kyc/soap/
+  url: ${kyc.config.hostname}:9007/kyc/soap/
 
 logging:
   file:
@@ -30,8 +30,8 @@ logging:
 
 server:
   ssl:
-    enabled: true
+    enabled: false
     key-store-type: PKCS12
-    key-store: /opt/kyc/kyc-config-files/keystore.p12
-    key-store-password: test
-    key-alias: backbone-key
+    key-store: ${kyc.config.keystore.backbone.path}
+    key-store-password: ${kyc.config.keystore.backbone.secret}
+    key-alias: ${kyc.config.keystore.backbone.alias}

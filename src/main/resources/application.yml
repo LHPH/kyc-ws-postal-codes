@@ -3,6 +3,9 @@ spring:
     name: kyc-ws-postal-codes
   profiles:
     active: dev
+  webservices:
+    path: /kyc
+
 
 server:
   port: 9007
