@@ -8,7 +8,7 @@ spring:
       maximum-pool-size: 5
 
 service:
-  url: http://localhost:9007/kyc/soap/
+  url: http://localhost:9007/kyc/soap/KYCPostalCodes
 
 logging:
   level:

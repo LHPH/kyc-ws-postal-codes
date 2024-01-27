@@ -7,9 +7,6 @@ spring:
     hikari:
       maximum-pool-size: 10
 
-service:
-  url: ${kyc.config.hostname}:9007/kyc/soap/
-
 logging:
   file:
     name: /opt/kyc/logs/${spring.application.name}.log

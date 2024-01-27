@@ -28,7 +28,7 @@ public class WebServiceConfigLocal {
     public DefaultWsdl11Definition postalCodesWsdl(){
 
         DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
-        definition.setServiceName("PostalCodes");
+        definition.setServiceName("KYCPostalCodes");
         definition.setPortTypeName("PostalCodesPortType");
         definition.setLocationUri(urlService);
         definition.setTargetNamespace(NAME_SPACE_POSTAL_CODES_URI);

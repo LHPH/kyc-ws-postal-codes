@@ -45,7 +45,7 @@
 
     <wsdl:service name="KYCPostalCodes">
         <wsdl:port binding="tns:PostalCodesSoap11" name="PostalCodesSoap11">
-            <soap:address location=" http://localhost:9007/kyc/soap/PostalCodes/"/>
+            <soap:address location=" http://localhost:9007/kyc/soap/KYCPostalCodes/"/>
         </wsdl:port>
     </wsdl:service>
 
