@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.3</version>
+		<version>4.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kyc</groupId>
@@ -31,7 +31,7 @@
 		>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web-services</artifactId>
+			<artifactId>spring-boot-starter-webservices</artifactId>
 		</dependency>
 
 		<dependency>
@@ -73,32 +73,32 @@
 		<dependency>
 			<groupId>io.github.threeten-jaxb</groupId>
 			<artifactId>threeten-jaxb-core</artifactId>
-			<version>2.1.0</version>
+			<version>2.2.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.ws.xmlschema</groupId>
 			<artifactId>xmlschema-core</artifactId>
-			<version>2.3.1</version>
+			<version>2.3.2</version>
 		</dependency>
 
 		<dependency>
 			<groupId>jakarta.xml.ws</groupId>
 			<artifactId>jakarta.xml.ws-api</artifactId>
-			<version>3.0.0</version>
+			<version>4.0.3</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
-			<version>4.0.2</version>
+			<version>4.0.5</version>
 			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>3.0.0</version>
+			<version>4.0.5</version>
 		</dependency>
 
 	</dependencies>

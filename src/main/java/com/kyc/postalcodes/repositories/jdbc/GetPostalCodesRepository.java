@@ -47,7 +47,7 @@ public class GetPostalCodesRepository {
             sql = queriesProps.getProperty(GET_MAX_VERSION);
             currentVersion = DataAccessUtils.singleResult(jdbcTemplate.queryForList(sql,Integer.class));
         }
-        return ObjectUtils.defaultIfNull(currentVersion,0);
+        return ObjectUtils.getIfNull(currentVersion,0);
     }
 
     public PostalCodeData getPostalCodeMain(String postalCode, Integer version){
