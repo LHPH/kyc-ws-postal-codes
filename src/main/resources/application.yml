@@ -17,6 +17,7 @@ kyc-messages:
         code: KYC-POSTAL-CODES-001
         message: Unexpected Error
         type: ERROR
+        hint: UNEXPECTED
       "002":
         code: KYC-POSTAL-CODES-002
         message: The postal code is invalid or does not exists
